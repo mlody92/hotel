@@ -1,0 +1,13 @@
+D:\Praca inżynierska\Hotel\bin\Hotel.dll
+D:\Praca inżynierska\Hotel\bin\Hotel.pdb
+D:\Praca inżynierska\Hotel\obj\Debug\Hotel.dll
+D:\Praca inżynierska\Hotel\obj\Debug\Hotel.pdb
+D:\Praca inżynierska\Hotel\bin\Newtonsoft.Json.dll
+D:\Praca inżynierska\Hotel\bin\System.Net.Http.Formatting.dll
+D:\Praca inżynierska\Hotel\bin\System.Web.Http.dll
+D:\Praca inżynierska\Hotel\bin\System.Web.Http.WebHost.dll
+D:\Praca inżynierska\Hotel\bin\Newtonsoft.Json.xml
+D:\Praca inżynierska\Hotel\bin\System.Net.Http.Formatting.xml
+D:\Praca inżynierska\Hotel\bin\System.Web.Http.xml
+D:\Praca inżynierska\Hotel\bin\System.Web.Http.WebHost.xml
+D:\Praca inżynierska\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache

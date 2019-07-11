@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4CACE02-FE8A-419A-ADB9-76FE0A82B606}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hotel</RootNamespace>
+    <AssemblyName>Hotel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\advert.aspx" />
+    <Content Include="Account\bank.aspx" />
+    <Content Include="Account\changePassword.aspx" />
+    <Content Include="Account\userProfile.aspx" />
+    <Content Include="Admin\advert\edit.aspx" />
+    <Content Include="Admin\advert\manage.aspx" />
+    <Content Include="Admin\advert\managePlayer.aspx" />
+    <Content Include="Admin\attractions\add.aspx" />
+    <Content Include="Admin\attractions\edit.aspx" />
+    <Content Include="Admin\attractions\manage.aspx" />
+    <Content Include="Admin\attractions\managePlayer.aspx" />
+    <Content Include="Admin\css\font-awesome.css" />
+    <Content Include="Admin\css\layout2.css" />
+    <Content Include="Admin\css\login.css" />
+    <Content Include="Admin\css\main.css" />
+    <Content Include="Admin\css\MoneAdmin.css" />
+    <Content Include="Admin\dzialka\editAtr.aspx" />
+    <Content Include="Admin\dzialka\manageAtr.aspx" />
+    <Content Include="Admin\dzialka\managePlayer.aspx" />
+    <Content Include="Admin\hotel\editType.aspx" />
+    <Content Include="Admin\hotel\manageType.aspx" />
+    <Content Include="Admin\font\fontawesome-webfont.svg" />
+    <Content Include="Admin\dzialka\add.aspx" />
+    <Content Include="Admin\dzialka\edit.aspx" />
+    <Content Include="Admin\dzialka\manage.aspx" />
+    <Content Include="Admin\images\logo.png" />
+    <Content Include="Admin\images\user.gif" />
+    <Content Include="Admin\index.aspx" />
+    <Content Include="Admin\css\bootstrap.css" />
+    <Content Include="Admin\login.aspx" />
+    <Content Include="Admin\rooms\edit.aspx" />
+    <Content Include="Admin\rooms\manage.aspx" />
+    <Content Include="Admin\rooms\managePlayer.aspx" />
+    <Content Include="Admin\settings\setTime.aspx" />
+    <Content Include="Admin\statistics\chart.aspx" />
+    <Content Include="Admin\statistics\chartAll.aspx" />
+    <Content Include="Admin\statistics\statistic.aspx" />
+    <Content Include="Admin\users\startMoney.aspx" />
+    <Content Include="Admin\workers\addWorker.aspx" />
+    <Content Include="Admin\region\editMiasto.aspx" />
+    <Content Include="Admin\region\editWojewodztwo.aspx" />
+    <Content Include="Admin\region\manageMiasto.aspx" />
+    <Content Include="Admin\scripts\bootstrap-wysihtml5-hack.js" />
+    <Content Include="Admin\scripts\bootstrap.min.js" />
+    <Content Include="Admin\scripts\jquery-2.0.3.min.js" />
+    <Content Include="Admin\scripts\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="Admin\scripts\time.js" />
+    <Content Include="Admin\settings\time.aspx" />
+    <Content Include="Admin\users\editUser.aspx" />
+    <Content Include="Admin\users\manageUsers.aspx" />
+    <Content Include="Admin\user_profile\changePassword.aspx" />
+    <Content Include="Admin\user_profile\ustawienia.aspx" />
+    <Content Include="Admin\region\manageWoj.aspx" />
+    <Content Include="Admin\workers\editWorker.aspx" />
+    <Content Include="Admin\workers\managePlayer.aspx" />
+    <Content Include="Admin\workers\manageWorker.aspx" />
+    <Content Include="Admin\bank\manageBank.aspx" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.UI.Combined.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.xml" />
+    <Content Include="bin\DotNetOpenAuth.Core.dll" />
+    <Content Include="bin\DotNetOpenAuth.Core.xml" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.xml" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.xml" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.xml" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.xml" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Membership.OpenAuth.dll" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Providers.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="css\site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Home\GenerateCaptcha.aspx" />
+    <Content Include="Home\login.aspx" />
+    <Content Include="Home\register.aspx" />
+    <Content Include="hotels\attraction.aspx" />
+    <Content Include="hotels\attractions.aspx" />
+    <Content Include="hotels\attractionWorkers.aspx" />
+    <Content Include="hotels\manage.aspx" />
+    <Content Include="hotels\my.aspx" />
+    <Content Include="hotels\myAttraction.aspx" />
+    <Content Include="hotels\myRooms.aspx" />
+    <Content Include="hotels\worker.aspx" />
+    <Content Include="hotels\workers.aspx" />
+    <Content Include="images\arrow.png" />
+    <Content Include="images\site\background.gif" />
+    <Content Include="images\site\header.jpg" />
+    <Content Include="images\site\header_pryg.jpg" />
+    <Content Include="images\site\member1.jpg" />
+    <Content Include="images\site\member2.jpg" />
+    <Content Include="images\site\member3.jpg" />
+    <Content Include="images\site\member4.jpg" />
+    <Content Include="images\site\member5.jpg" />
+    <Content Include="images\site\member6.jpg" />
+    <Content Include="images\site\member7.jpg" />
+    <Content Include="images\site\member8.jpg" />
+    <Content Include="images\site\menubottom.gif" />
+    <Content Include="images\site\menumiddle.gif" />
+    <Content Include="images\site\menutop.gif" />
+    <Content Include="images\site\postbottom.gif" />
+    <Content Include="images\site\postmiddle.gif" />
+    <Content Include="images\site\posttop.gif" />
+    <Content Include="index.aspx" />
+    <Content Include="hotels\rooms.aspx" />
+    <Content Include="Script\time.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="workers\my.aspx" />
+    <Content Include="workers\worker.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\advert.aspx.cs">
+      <DependentUpon>advert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\advert.aspx.designer.cs">
+      <DependentUpon>advert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\bank.aspx.cs">
+      <DependentUpon>bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\bank.aspx.designer.cs">
+      <DependentUpon>bank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\changePassword.aspx.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\changePassword.aspx.designer.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\userProfile.aspx.cs">
+      <DependentUpon>userProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\userProfile.aspx.designer.cs">
+      <DependentUpon>userProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin2.Master.cs">
+      <DependentUpon>admin2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin2.Master.designer.cs">
+      <DependentUpon>admin2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\advert\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\advert\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\advert\manage.aspx.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\advert\manage.aspx.designer.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\advert\managePlayer.aspx.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\advert\managePlayer.aspx.designer.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\attractions\add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\attractions\add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\attractions\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\attractions\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\attractions\manage.aspx.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\attractions\manage.aspx.designer.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\attractions\managePlayer.aspx.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\attractions\managePlayer.aspx.designer.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dzialka\add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dzialka\add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dzialka\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dzialka\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dzialka\editAtr.aspx.cs">
+      <DependentUpon>editAtr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dzialka\editAtr.aspx.designer.cs">
+      <DependentUpon>editAtr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dzialka\manageAtr.aspx.cs">
+      <DependentUpon>manageAtr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dzialka\manageAtr.aspx.designer.cs">
+      <DependentUpon>manageAtr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dzialka\managePlayer.aspx.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dzialka\managePlayer.aspx.designer.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\hotel\editType.aspx.cs">
+      <DependentUpon>editType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\hotel\editType.aspx.designer.cs">
+      <DependentUpon>editType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dzialka\manage.aspx.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dzialka\manage.aspx.designer.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\hotel\manageType.aspx.cs">
+      <DependentUpon>manageType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\hotel\manageType.aspx.designer.cs">
+      <DependentUpon>manageType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\rooms\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\rooms\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\rooms\manage.aspx.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\rooms\manage.aspx.designer.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\rooms\managePlayer.aspx.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\rooms\managePlayer.aspx.designer.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\settings\setTime.aspx.cs">
+      <DependentUpon>setTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\settings\setTime.aspx.designer.cs">
+      <DependentUpon>setTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\statistics\chart.aspx.cs">
+      <DependentUpon>chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\statistics\chart.aspx.designer.cs">
+      <DependentUpon>chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\statistics\chartAll.aspx.cs">
+      <DependentUpon>chartAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\statistics\chartAll.aspx.designer.cs">
+      <DependentUpon>chartAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\statistics\statistic.aspx.cs">
+      <DependentUpon>statistic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\statistics\statistic.aspx.designer.cs">
+      <DependentUpon>statistic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\users\startMoney.aspx.cs">
+      <DependentUpon>startMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\users\startMoney.aspx.designer.cs">
+      <DependentUpon>startMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\workers\addWorker.aspx.cs">
+      <DependentUpon>addWorker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\workers\addWorker.aspx.designer.cs">
+      <DependentUpon>addWorker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\region\editMiasto.aspx.cs">
+      <DependentUpon>editMiasto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\region\editMiasto.aspx.designer.cs">
+      <DependentUpon>editMiasto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\region\editWojewodztwo.aspx.cs">
+      <DependentUpon>editWojewodztwo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\region\editWojewodztwo.aspx.designer.cs">
+      <DependentUpon>editWojewodztwo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\region\manageMiasto.aspx.cs">
+      <DependentUpon>manageMiasto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\region\manageMiasto.aspx.designer.cs">
+      <DependentUpon>manageMiasto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\settings\time.aspx.cs">
+      <DependentUpon>time.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\settings\time.aspx.designer.cs">
+      <DependentUpon>time.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\tools.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\users\editUser.aspx.cs">
+      <DependentUpon>editUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\users\editUser.aspx.designer.cs">
+      <DependentUpon>editUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\users\manageUsers.aspx.cs">
+      <DependentUpon>manageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\users\manageUsers.aspx.designer.cs">
+      <DependentUpon>manageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\user_profile\changePassword.aspx.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\user_profile\changePassword.aspx.designer.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\user_profile\ustawienia.aspx.cs">
+      <DependentUpon>ustawienia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\user_profile\ustawienia.aspx.designer.cs">
+      <DependentUpon>ustawienia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\region\manageWoj.aspx.cs">
+      <DependentUpon>manageWoj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\region\manageWoj.aspx.designer.cs">
+      <DependentUpon>manageWoj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\workers\editWorker.aspx.cs">
+      <DependentUpon>editWorker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\workers\editWorker.aspx.designer.cs">
+      <DependentUpon>editWorker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\workers\managePlayer.aspx.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\workers\managePlayer.aspx.designer.cs">
+      <DependentUpon>managePlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\workers\manageWorker.aspx.cs">
+      <DependentUpon>manageWorker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\workers\manageWorker.aspx.designer.cs">
+      <DependentUpon>manageWorker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\bank\manageBank.aspx.cs">
+      <DependentUpon>manageBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\bank\manageBank.aspx.designer.cs">
+      <DependentUpon>manageBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home\GenerateCaptcha.aspx.cs">
+      <DependentUpon>GenerateCaptcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\GenerateCaptcha.aspx.designer.cs">
+      <DependentUpon>GenerateCaptcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\attraction.aspx.cs">
+      <DependentUpon>attraction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\attraction.aspx.designer.cs">
+      <DependentUpon>attraction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\attractions.aspx.cs">
+      <DependentUpon>attractions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\attractions.aspx.designer.cs">
+      <DependentUpon>attractions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\attractionWorkers.aspx.cs">
+      <DependentUpon>attractionWorkers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\attractionWorkers.aspx.designer.cs">
+      <DependentUpon>attractionWorkers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\manage.aspx.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\manage.aspx.designer.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\my.aspx.cs">
+      <DependentUpon>my.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\my.aspx.designer.cs">
+      <DependentUpon>my.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\myAttraction.aspx.cs">
+      <DependentUpon>myAttraction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\myAttraction.aspx.designer.cs">
+      <DependentUpon>myAttraction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\myRooms.aspx.cs">
+      <DependentUpon>myRooms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\myRooms.aspx.designer.cs">
+      <DependentUpon>myRooms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\worker.aspx.cs">
+      <DependentUpon>worker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\worker.aspx.designer.cs">
+      <DependentUpon>worker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels\workers.aspx.cs">
+      <DependentUpon>workers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\workers.aspx.designer.cs">
+      <DependentUpon>workers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="hotels\rooms.aspx.cs">
+      <DependentUpon>rooms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels\rooms.aspx.designer.cs">
+      <DependentUpon>rooms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="tools\tools.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\dane.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\uprawnienie.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tools\hash.cs" />
+    <Compile Include="tools\login.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="workers\my.aspx.cs">
+      <DependentUpon>my.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="workers\my.aspx.designer.cs">
+      <DependentUpon>my.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="workers\worker.aspx.cs">
+      <DependentUpon>worker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="workers\worker.aspx.designer.cs">
+      <DependentUpon>worker.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+    <Content Include="packages.config" />
+    <Content Include="Admin\admin.Master" />
+    <Content Include="bin\Antlr3.Runtime.dll.refresh" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll.refresh" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.UI.Combined.dll.refresh" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.dll.refresh" />
+    <Content Include="bin\DotNetOpenAuth.Core.dll.refresh" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.dll.refresh" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.dll.refresh" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.dll.refresh" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.dll.refresh" />
+    <Content Include="bin\EntityFramework.dll.refresh" />
+    <Content Include="bin\Microsoft.AspNet.Membership.OpenAuth.dll.refresh" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll.refresh" />
+    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll.refresh" />
+    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll.refresh" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll.refresh" />
+    <Content Include="bin\System.Web.Optimization.dll.refresh" />
+    <Content Include="bin\System.Web.Providers.dll.refresh" />
+    <Content Include="bin\WebGrease.dll.refresh" />
+    <Content Include="Admin\font\fontawesome-webfont.eot" />
+    <Content Include="Admin\font\fontawesome-webfont.ttf" />
+    <Content Include="Admin\font\fontawesome-webfont.woff" />
+    <Content Include="Admin\font\FontAwesome.otf" />
+    <Content Include="Admin\admin2.Master" />
+    <Content Include="Site2.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62235/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

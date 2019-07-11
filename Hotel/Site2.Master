@@ -1,0 +1,286 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.Master.cs" Inherits="Hotel.Site2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <meta charset="utf-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="css/site.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="../Script/time.js"></script>
+    <%--<link href="<%: Url.Content("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />--%>
+</head>
+<body>
+    <form id="Form" runat="server">
+        <div id="container">
+
+            <div id="header">
+                <div id="linkNiezalogowany" runat="server" visible="true">
+                    <ul>
+                        <li>
+                            <asp:HyperLink ID="loginHyperLink" runat="server" NavigateUrl="~/Home/login.aspx">Zaloguj</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="zarejestrujHyperLink" runat="server" NavigateUrl="~/Home/register.aspx">Zarejestruj</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="kontaktHyperLink" runat="server" NavigateUrl="~/Home/login.aspx">Kontakt</asp:HyperLink></li>
+                    </ul>
+                </div>
+                <div id="linkZalogowany" runat="server" visible="false">
+                    <ul>
+                        <li>
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="wylogujLinkButton_Click">Wyloguj</asp:LinkButton></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Home/login.aspx">Kontakt</asp:HyperLink></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div id="content">
+                <div id="left">
+
+                    <div id="menuLogin" class="menu" runat="server" visible="true">
+                        <div class="menuheader">
+                            <h3>Logowanie</h3>
+                        </div>
+                        <div id="Div1" class="menulogin" runat="server">
+                            <ul>
+                                <li>Login:<asp:TextBox ID="loginText" runat="server"></asp:TextBox></li>
+                                <li>Hasło:<asp:TextBox ID="hasloText" runat="server" TextMode="Password"></asp:TextBox></li>
+                                <li>
+                                    <asp:LinkButton ID="zalogujButton" runat="server" OnClick="zalogujButton_Click">Zaloguj</asp:LinkButton>
+
+                                </li>
+                                <li>
+                                    <asp:Label ID="Label2" runat="server" Text="Label" Visible="False" ForeColor="Red"></asp:Label></li>
+
+                            </ul>
+                        </div>
+                        <div class="menufooter"></div>
+                    </div>
+
+
+                    <div id="menuAfterLogin" class="menu" runat="server" visible="false">
+
+                        <div class="menu">
+                            <div class="menuheader">
+                                <h3>Menu</h3>
+                            </div>
+                            <div class="menucontent">
+                                <ul>
+                                    <li><a href="/">Start</a></li>
+                                    <li>
+                                        <asp:HyperLink ID="hoteleHyperLink" runat="server" NavigateUrl="~/hotels/manage.aspx">Kup działkę</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/hotels/workers.aspx">Zatrudnij pracownika</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/hotels/attractions.aspx">Zbuduj atrakcję</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Account/bank.aspx">Bank</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Account/advert.aspx">Reklama</asp:HyperLink></li>
+
+                                </ul>
+                            </div>
+                            <div class="menufooter"></div>
+                            <div class="menuheader">
+                                <h3>Moje</h3>
+                            </div>
+                            <div class="menucontent">
+                                <ul>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/hotels/my.aspx">Hotele</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/workers/my.aspx">Pracownicy</asp:HyperLink></li>
+
+                                </ul>
+                            </div>
+                            <div class="menufooter"></div>
+                        </div>
+
+                        <div class="menuheader">
+                            <h3>Profil</h3>
+                        </div>
+                        <div id="Div2" class="menulogin" runat="server">
+                            <ul>
+                                <li>
+                                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label></li>
+                                <li>
+                                    <asp:LinkButton ID="wylogujButton" runat="server" OnClick="wylogujButton_Click">Wyloguj</asp:LinkButton></li>
+
+                            </ul>
+                        </div>
+                        <div class="menufooter"></div>
+                    </div>
+
+
+                    <div class="menu" id="ustawienia" runat="server" visible="false">
+                        <div class="menuheader">
+                            <h3>Ustawienia</h3>
+                        </div>
+                        <div class="menucontent">
+                            <ul>
+                                <li>
+                                    <asp:HyperLink ID="changePasswordLink" runat="server" NavigateUrl="~/Account/changePassword.aspx">Zmień hasło</asp:HyperLink></li>
+                                <li>
+                                    <asp:HyperLink ID="profilLink" runat="server" NavigateUrl="~/Account/userProfile.aspx">Profil użytkownika</asp:HyperLink></li>
+                            </ul>
+                        </div>
+                        <div class="menufooter"></div>
+                    </div>
+
+
+
+
+                </div>
+                <div id="right">
+
+                    <asp:ContentPlaceHolder ID="RightContentPlaceHolder" runat="server">
+
+                        <div id="statystykiDiv" class="menu" runat="server" visible="false">
+                            <div class="menuheader">
+                                <h3>Statystyki</h3>
+                            </div>
+                            <div class="menucontent">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p>Nazwa użytkownika:</p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <asp:Label ID="nazwaUzytkownikaLabel" runat="server" Text=""></asp:Label>
+                                            </p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Stan konta:</p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <asp:Label ID="stanKontaLabel" runat="server" Text=""></asp:Label>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="menufooter"></div>
+                        </div>
+
+                        <div class="menu">
+                            <div class="menuheader">
+                                <h3>Czas</h3>
+                            </div>
+                            <div id="pokaz" class="menucontent" style="text-decoration-color: white">
+
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="menufooter">
+                            </div>
+                        </div>
+
+
+
+                        <%--<div class="menu">
+                            <div class="menuheader">
+                                <h3>Team</h3>
+                            </div>
+                            <div class="menucontent">
+                                <div class="member">
+                                    <a href="#">
+                                        <img src="../images/site/member1.jpg" alt="member" /></a> <span><a href="#">Member 1</a></span>
+                                </div>
+                                <div class="member">
+                                    <a href="#">
+                                        <img src="../images/site/member2.jpg" alt="member" /></a> <span><a href="#">Member 2</a></span>
+                                </div>
+                                <div class="member">
+                                    <a href="#">
+                                        <img src="../images/site/member3.jpg" alt="member" /></a> <span><a href="#">Member 3</a></span>
+                                </div>
+                                <div class="member">
+                                    <a href="#">
+                                        <img src="../images/site/member4.jpg" alt="member" /></a> <span><a href="#">Member 4</a></span>
+                                </div>
+                                <div class="member">
+                                    <a href="#">
+                                        <img src="../images/site/member5.jpg" alt="member" /></a> <span><a href="#">Member 5</a></span>
+                                </div>
+                                <div class="member">
+                                    <a href="#">
+                                        <img src="../images/site/member6.jpg" alt="member" /></a> <span><a href="#">Member 6</a></span>
+                                </div>
+                                <div class="member">
+                                    <a href="#">
+                                        <img src="../images/site/member7.jpg" alt="member" /></a> <span><a href="#">Member 7</a></span>
+                                </div>
+                                <div class="member">
+                                    <a href="#">
+                                        <img src="../images/site/member8.jpg" alt="member" /></a> <span><a href="#">Member 8</a></span>
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="menufooter">
+                            </div>
+                        </div>--%>
+                    </asp:ContentPlaceHolder>
+
+                </div>
+
+                <div id="middle">
+                    <div id="middlePost" runat="server">
+                        <asp:ContentPlaceHolder ID="MiddleContentPlaceHolder" runat="server">
+
+
+                            <div class="post">
+                                <div class="postheader">
+                                    <h1>Witaj w Hotel Simulator</h1>
+                                </div>
+                                <div class="postcontent">
+                                    <div id="body">
+
+                                        <p>
+                                            <asp:Label ID="Label3" runat="server" Text="Aby zacząć grę należy się zarejestrować i poczekać, aż administrator zaakceptuje konto."></asp:Label>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="postfooter"></div>
+                            </div>
+
+
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="footer">
+                <%-- <ul>
+                    <li><a href="http://www.freewebsitetemplates.com">Join now</a></li>
+                    <li><a href="http://www.freewebsitetemplates.com">Links</a></li>
+                    <li><a href="http://www.freewebsitetemplates.com">Login</a></li>
+                    <li><a href="http://www.freewebsitetemplates.com">Forums</a></li>
+                    <li><a href="http://www.freewebsitetemplates.com">News</a></li>
+                    <li><a href="http://www.freewebsitetemplates.com">Download</a></li>
+                    <li class="last"><a href="http://www.freewebsitetemplates.com">contact</a></li>
+                </ul>--%>
+                <span>Copyright © 2015&nbsp;Supported by <a href="http://www.pwsz.krosno.pl" style="color: red">PWSZ Krosno</a></span>
+            </div>
+        </div>
+        <div>
+        </div>
+        <div id="skryptCzas" runat="server" />
+    </form>
+</body>
+</html>
